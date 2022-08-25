@@ -16,12 +16,19 @@ import csv
 import pandas as pd
 import ast
 from flask import Flask
+
 #from flask_restful import Api, Resource, reqparse
 from flask_restful import Api, Resource, reqparse
+
+
 
 import numpy as np
 from skimage import img_as_float, io
 from skimage.metrics import structural_similarity as ssim
+#this is used in the rotation function
+from math import atan2, cos, sin, sqrt, pi
+
+
 
 BASE_PATH = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
 CSV_PATH = os.path.join(os.getcwd(),'result.csv')
