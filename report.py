@@ -20,6 +20,7 @@ def generate_report(camid, test_img_path, perfect_img_path):
     perfect_img = cv2.imread(perfect_img_path)
     perfect_img = cv2.resize(perfect_img, (IMG_WIDTH, IMG_HEIGHT))
     test_img_rotate = cv2.imread(test_img_path)
+    perfect_img_rotate = cv2.imread(perfect_img_path)
 
     # preprocessing image for image shift calculation
     # 0 means image is read in grayscale mode
@@ -44,7 +45,7 @@ def generate_report(camid, test_img_path, perfect_img_path):
     ssim_score_pct = ssim(test_img_SSIM, perfect_img_SSIM)
 
     ssim_score_pct = float('{:.2f}'.format(ssim_score_pct))*100
-    image_rotated = Image_Not_Rotated(test_img_rotate)
+    image_rotated = Image_Not_Rotated(test_img_rotate,perfect_img_rotate)
     image_horizontal = Image_Horizontal_Shift(test_img_shift, perfect_img_shift)
     image_vertical = Image_Vertical_Shift(test_img_shift, perfect_img_shift)
     #to remove the strings
