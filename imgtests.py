@@ -218,7 +218,7 @@ def detect_obj(img):
     if not objDetected:
         return (0, 0, 0, 0)
 
-
+#The below code may not be used
 def isshifted(test_img, perfect_img):
     '''
     if img shifted: returns false 1
@@ -259,7 +259,7 @@ def isshifted(test_img, perfect_img):
         return "Image not clear "
 
 # Arun: 25 Aug 2022 -this code below is the backup code. it works  P703 and not for J73
-
+# Image_Not_Rotated_old is not in use
 def Image_Not_Rotated_old(test_img):
     '''
     If Image Not Rotated Returns 1
