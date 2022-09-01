@@ -394,8 +394,8 @@ def Image_Not_Rotated(test_img , perfect_img):
         
     perfect_img_angle=runForLoop(perfect_img)
     test_img_angle=runForLoop(test_img)
-
-    rotated_angle=abs(round(test_img_angle-perfect_img_angle) )
+    rotated_angle=test_img_angle-perfect_img_angle
+    #rotated_angle=abs(round(test_img_angle-perfect_img_angle) )
     
     #except:
         #return 0  # image rotated
