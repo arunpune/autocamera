@@ -92,6 +92,7 @@ def generate_report(camid, test_img_path, perfect_img_path):
             Image_Not_Inverted(test_img, perfect_img),
             Image_Not_Mirrored(test_img, perfect_img),
             #image_rotated['rotated_test'],
+            #what is eval used for?
             eval(str(rotated_test)),
             eval(str(rotated_degree)),
             eval(str(horizontal_shift_test)),
