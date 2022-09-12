@@ -1,3 +1,4 @@
+from decimal import Decimal
 from re import S
 from configmain import *
 '''
@@ -388,13 +389,17 @@ def Image_Not_Rotated(test_img , perfect_img):
               # Find the orientation of each shape
                 cv2.imwrite("output_img1.png", img)
                 angleOfImage = getOrientation(c, img)
-                angleOfImageDeg=(int(np.rad2deg(angleOfImage)))
+                #angleOfImageDeg=(int(np.rad2deg(angleOfImage)))
+                #decimal values code upto 1.00 positions
+                angleOfImageDeg = Decimal(np.rad2deg(angleOfImage)).quantize(Decimal('1.00'))
+
                 return angleOfImageDeg
         
         
     perfect_img_angle=runForLoop(perfect_img)
     test_img_angle=runForLoop(test_img)
-    rotated_angle=test_img_angle-perfect_img_angle
+    #here abs is removing the -+negative and positives
+    rotated_angle=abs(test_img_angle-perfect_img_angle)
     #rotated_angle=abs(round(test_img_angle-perfect_img_angle) )
     
     #except:

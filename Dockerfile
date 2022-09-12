@@ -16,6 +16,7 @@ ENV PYTHONUNBUFFERED=1
 #WORKDIR /app
 WORKDIR /autocameratest2
 
+
 RUN apt-get update \
     && apt-get -y install --reinstall build-essential \
     && apt-get install -y gcc python-opencv 
